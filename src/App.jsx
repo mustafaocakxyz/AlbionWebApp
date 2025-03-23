@@ -6,6 +6,7 @@ function App() {
   const [items, setItems] = useState(() => {
     // Try to load data from localStorage
     const savedData = localStorage.getItem(STORAGE_KEY);
+    console.log('Loading from localStorage:', savedData);
     if (savedData) {
       return JSON.parse(savedData);
     }
@@ -15,6 +16,7 @@ function App() {
 
   // Save data to localStorage whenever items change
   useEffect(() => {
+    console.log('Saving to localStorage:', items);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   }, [items]);
 
