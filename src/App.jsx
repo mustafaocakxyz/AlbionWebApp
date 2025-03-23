@@ -1,9 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
-  const [items, setItems] = useState([
-    { id: 1, name: '', buyPrice: '', sellPrice: '', profit: null }
-  ])
+  const STORAGE_KEY = 'profitCalculatorData';
+
+  const [items, setItems] = useState(() => {
+    // Try to load data from localStorage
+    const savedData = localStorage.getItem(STORAGE_KEY);
+    if (savedData) {
+      return JSON.parse(savedData);
+    }
+    // If no data exists, return initial state
+    return [{ id: 1, name: '', buyPrice: '', sellPrice: '', profit: null }];
+  });
+
+  // Save data to localStorage whenever items change
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  }, [items]);
 
   const addRow = () => {
     setItems([
