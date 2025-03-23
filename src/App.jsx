@@ -34,7 +34,7 @@ function App() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'black', padding: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', margin: 0, padding: 0 }}>
       <div style={{ width: '100%', maxWidth: '64rem', backgroundColor: '#f3f4f6', borderRadius: '0.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', padding: '1.5rem' }}>
         <h1 style={{ textAlign: 'center', fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'black' }}>Profit Calculator</h1>
         
